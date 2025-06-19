@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+body {
+  background-color: #f8f8f8;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.bg-image {
+  background-image:
+    linear-gradient(rgba(22, 23, 23, 0.849), rgb(22, 23, 23, 0.849)),
+    url("../public/images/walpaper.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
