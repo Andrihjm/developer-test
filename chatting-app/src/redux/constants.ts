@@ -1,1 +1,1 @@
-export const BASE_URL = "https://api-chat-app-production-14a5.up.railway.app";
+export const BASE_URL = "http://localhost:8000";
