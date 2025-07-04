@@ -53,3 +53,10 @@ model Message {
   room      Room     @relation(fields: [roomId], references: [id])
   createdAt DateTime @default(now())
 }
+
+model Crud {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  content   String
+  updatedAt DateTime @updatedAt
+  createdAt DateTime @default(now())
+}
