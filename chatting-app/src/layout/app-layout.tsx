@@ -2,6 +2,7 @@ import SidebarRoot from "../components/sidebars/sidebar-root";
 import AuthRouter from "../routes/auth-router";
 import Message from "../pages/root/message";
 import AppRouter from "../routes/app-router";
+import Crud from "../pages/root/latihan/crud";
 
 const AppLayout = () => {
   return (
@@ -16,6 +17,7 @@ const AppLayout = () => {
 
         <div className="w-full flex-1 bg-[#161717]">
           <AppRouter />
+          <Crud />
         </div>
       </div>
     </>
