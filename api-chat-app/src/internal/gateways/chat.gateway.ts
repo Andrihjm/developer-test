@@ -37,7 +37,7 @@ export class ChatGateway {
   ) {
     const senderId = client.data.userId;
     if (!senderId) return;
-    console.log(senderId)
+    console.log(senderId);
 
     let roomId: string;
     let savedMessage: any;
