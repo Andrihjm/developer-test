@@ -1,15 +1,19 @@
 services:
-  api:
-    build: .
+  api-chat-app:
     container_name: api-chat-app
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
-      - '3000:3000'
+      - '8001:8001'
     environment:
       - MONGODB_URI=mongodb://mongo:27017/chatdb
       - JWT_SECRET=e5387a5389814bc2269cab7b207a3f042cc345cb3762ae2087491fe035c039c4
     depends_on:
       - mongo
     restart: unless-stopped
+    networks:
+      - local-network
 
   mongo:
     image: mongo:7.0
@@ -19,6 +23,13 @@ services:
     volumes:
       - mongo-data:/data/db
     restart: unless-stopped
+    networks:
+      - local-network
 
 volumes:
   mongo-data:
+
+networks:
+  local-network:
+    external: true
+    driver: bridge
