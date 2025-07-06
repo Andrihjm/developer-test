@@ -1,10 +1,19 @@
 services:
-  frontend:
-    build: .
-    container_name: frontend
+  chatting-app:
+    container_name: chatting-app
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
       - "3000:80"
     environment:
       - NODE_ENV=production
       - VITE_SOCKET_URL=https://api-chat-app-production-14a5.up.railway.app
     restart: unless-stopped
+    networks:
+      - local-network
+
+networks:
+  local-network:
+    external: true
+    driver: bridge
